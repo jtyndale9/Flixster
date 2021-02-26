@@ -30,6 +30,10 @@ public class DetailActivity extends YouTubeBaseActivity {
     TextView tvOverview;
     RatingBar ratingBar;
     YouTubePlayerView youTubePlayerView;
+    TextView release_date;
+    TextView isAdult;
+    TextView vote_count;
+    String backdrop_path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +44,25 @@ public class DetailActivity extends YouTubeBaseActivity {
         tvOverview = findViewById(R.id.ac_det_tvOverview);
         ratingBar = findViewById(R.id.ratingBar);
         youTubePlayerView = findViewById(R.id.player);
+        release_date = findViewById(R.id.release_date);
+        isAdult = findViewById(R.id.isAdult);
+        vote_count = findViewById(R.id.vote_count);
+
 
         //String title = getIntent().getStringExtra("title");
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
         tvTitle.setText(movie.getTitle());
-        tvOverview.setText(movie.getOverview());
+        tvOverview.setText("Overview: \n" + movie.getOverview());
         ratingBar.setRating((float) movie.getRating());
+        release_date.setText(movie.getRelease_date());
+        vote_count.setText("Out of " + movie.getVote_count() + " votes");
+        if(movie.getIsAdult() == true){
+            isAdult.setText("Rated Adult");
+        }
+        else{
+            isAdult.setText("Safe for minors");
+        }
+
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(String.format(VIDEOS_URL, movie.getMovieId()), new JsonHttpResponseHandler() {

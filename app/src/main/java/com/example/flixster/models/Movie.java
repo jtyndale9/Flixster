@@ -17,6 +17,10 @@ public class Movie {
     String overview;
     double rating;
     int movieId;
+    String release_date;
+    boolean isAdult;
+    int vote_count;
+    String backdrop_path;
 
     // empty constructor needed by the Parceler library
     public Movie(){
@@ -29,6 +33,10 @@ public class Movie {
         overview = jsonObject.getString("overview");
         rating = jsonObject.getDouble("vote_average");
         movieId = jsonObject.getInt("id");
+        release_date = jsonObject.getString("release_date");
+        isAdult = jsonObject.getBoolean("adult");
+        vote_count = jsonObject.getInt("vote_count");
+        backdrop_path = jsonObject.getString("backdrop_path");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -62,5 +70,21 @@ public class Movie {
 
     public int getMovieId() {
         return movieId;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public boolean getIsAdult() {
+        return isAdult;
+    }
+
+    public int getVote_count(){
+        return vote_count;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
     }
 }
