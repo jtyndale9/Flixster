@@ -64,16 +64,11 @@ public class DetailActivity extends YouTubeBaseActivity {
                     Log.e("DetailActivity", "Failed to parse JSON", e);
                 }
             }
-
             @Override
             public void onFailure(int i, Headers headers, String s, Throwable throwable) {
-
             }
         });
     }
-
-
-
 
     private void initializeYoutube(final String youtubeKey) {
 
@@ -87,10 +82,8 @@ public class DetailActivity extends YouTubeBaseActivity {
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
                 Log.d("DetailActivity", "onInitializationFailure");
-
             }
         });
-
     }
 }
 
