@@ -32,8 +32,34 @@
         android:rating="8.5" />
 
     <TextView
+        android:id="@+id/vote_count"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:textStyle="italic"
+        tools:text="Out of 300 votes" />
+
+    <TextView
         android:id="@+id/ac_det_tvOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         tools:text="27 years after overcoming the malevolent supernatural entity Pennwose te former members of the Losters Club. who have grown up and moved away from Derry are brought back together by a devasting phone call" />
+
+    <TextView
+        android:id="@+id/ReleaseDateID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Release Date:" />
+
+    <TextView
+        android:id="@+id/release_date"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        tools:text="2020-12-03" />
+
+    <TextView
+        android:id="@+id/isAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="*Rated Adult*" />
 </LinearLayout>
